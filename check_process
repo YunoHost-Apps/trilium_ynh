@@ -6,21 +6,16 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"	(DOMAIN)
-		path="/path"	(PATH)
-		admin="john"	(USER)
-		language="fr"
 		is_public=1	(PUBLIC|public=1|private=0)
-		password="pass"
-		port="666"	(PORT)
 	; Checks
 		pkg_linter=1
-		setup_sub_dir=1
+		setup_sub_dir=0
 		setup_root=1
 		setup_nourl=0
 		setup_private=1
 		setup_public=1
 		upgrade=1
-		upgrade=1	from_commit=CommitHash
+		upgrade=0	from_commit=CommitHash
 		backup_restore=1
 		multi_instance=1
 		port_already_use=0
@@ -31,5 +26,5 @@ Notification=none
 ;;; Upgrade options
 	; commit=CommitHash
 		name=Name and date of the commit.
-		manifest_arg=domain=DOMAIN&path=PATH&admin=USER&language=fr&is_public=1&password=pass&port=666&
+		manifest_arg=domain=DOMAIN&admin=USER&is_public=1&
 

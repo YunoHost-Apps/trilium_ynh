@@ -1,7 +1,7 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://github.com/zadam/trilium/archive/refs/tags/v0.46.6.tar.gz
+SOURCE_SUM=efcc6196997ac66c5503527bb7b76a4f1d4e893e9dc91bd96a4f2355eb2969e2
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
+SOURCE_FILENAME=v0.46.6.tar.gz
 SOURCE_EXTRACT=true
