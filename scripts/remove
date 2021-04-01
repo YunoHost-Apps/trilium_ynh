@@ -67,6 +67,13 @@ ynh_script_progression --message="Removing NGINX web server configuration..." --
 ynh_remove_nginx_config
 
 #=================================================
+# REMOVE NODE
+#=================================================
+ynh_script_progression --message="Removing Node.js version..." --weight=1
+
+ynh_remove_nodejs
+
+#=================================================
 # SPECIFIC REMOVE
 #=================================================
 # REMOVE VARIOUS FILES
