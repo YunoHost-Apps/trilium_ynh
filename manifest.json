@@ -39,9 +39,9 @@
             {
                 "name": "instance_name",
                 "type": "string",
-                "help": {
-                    "en": "Unique name for this instance (optional)",
-                    "fr": "Nom unique pour cette instance (facultatif)"
+                "ask": {
+                    "en": "Choose a unique name for this instance (optional)",
+                    "fr": "Choisissez un nom unique pour cette instance (facultatif)"
                 },
                 "example": "MyTrillium",
                 "optional": true,
