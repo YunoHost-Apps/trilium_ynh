@@ -79,10 +79,7 @@ usermod -d $final_path $app 2>&1
 #=================================================
 
 # Restore permissions on app files
-chown -R root:$app $final_path
-chmod -R g=u,g-w,o-rwx $final_path
-chown -R $app:$app $data_path
-chmod -R g=u,g-w,o-rwx $data_path
+set_permissions
 
 #=================================================
 # SPECIFIC RESTORATION

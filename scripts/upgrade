@@ -98,16 +98,7 @@ usermod -d $final_path $app 2>&1
 #=================================================
 ynh_script_progression --message="Installing Node.js packages ..." --weight=1
 
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=10
-ynh_use_nodejs
-node_PATH=$nodejs_path:$(sudo -u $app sh -c 'echo $PATH')
-
-pushd $final_path || ynh_die
-	chown -R $app:$app $final_path
-	sudo -u $app touch $final_path/.yarnrc
-	sudo -u $app PATH=$node_PATH yarn --cache-folder $final_path/yarn-cache --use-yarnrc $final_path/.yarnrc install 2>&1
-	chown -R root:root $final_path
-popd || ynh_die
+build_node_app
 
 #=================================================
 # SETUP SYSTEMD
@@ -131,10 +122,7 @@ ln -sf $final_path/config.ini $data_path/config.ini
 #=================================================
 
 # Set permissions on app files
-chown -R root:$app $final_path
-chmod -R g=u,g-w,o-rwx $final_path
-chown -R $app:$app $data_path
-chmod -R g=u,g-w,o-rwx $data_path
+set_permissions
 
 #=================================================
 # INTEGRATE SERVICE IN YUNOHOST
