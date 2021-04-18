@@ -11,11 +11,14 @@ pkg_dependencies="nodejs npm libpng16-16 libpng-dev pkg-config autoconf libtool 
 # PERSONAL HELPERS
 #=================================================
 
-function build_node_app {
+function set_node_vars {
 	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=10
 	ynh_use_nodejs
 	node_PATH=$nodejs_path:$(sudo -u $app sh -c 'echo $PATH')
+}
 
+function build_node_app {
+	set_node_vars
 	pushd $final_path || ynh_die
 		chown -R $app:$app $final_path
 		sudo -u $app touch $final_path/.yarnrc
