@@ -1,6 +1,6 @@
 # Trilium Notes for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 [![Install trilium with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
 *[Lire ce readme en français.](./README_fr.md)*
@@ -11,7 +11,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 Trilium Notes is an Evernote-like hierechical note taking application with many advanced features, focused on building a large personal knowledge base.
 
-**Shipped version:** 0.46.8
+**Shipped version:** 0.46.9
 
 ## Screenshots
 
@@ -37,9 +37,9 @@ Can the app be used by multiple users? **No**
 
 ## Links
 
- * Report a bug: https://github.com/YunoHost-Apps/trilium_ynh/issues
- * Upstream app repository: https://github.com/zadam/trilium
- * YunoHost website: https://yunohost.org/
+* Report a bug: https://github.com/YunoHost-Apps/trilium_ynh/issues
+* Upstream app repository: https://github.com/zadam/trilium
+* YunoHost website: https://yunohost.org/
 
 ---
 

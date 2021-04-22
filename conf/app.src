@@ -1,7 +1,7 @@
-SOURCE_URL=https://github.com/zadam/trilium/archive/refs/tags/v0.46.8.tar.gz
-SOURCE_SUM=da6535b1fa690037e2d768e06dd87d46d6ff7a1651b667c24e89541a2f98ec2d
+SOURCE_URL=https://github.com/zadam/trilium/archive/refs/tags/v0.46.9.tar.gz
+SOURCE_SUM=75048cc700a69544be5717a394cc2a0fbe6cf75347033ebe81b2d1ef8e93d1d4
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=v0.46.8.tar.gz
+SOURCE_FILENAME=v0.46.9.tar.gz
 SOURCE_EXTRACT=true

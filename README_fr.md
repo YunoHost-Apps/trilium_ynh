@@ -1,9 +1,9 @@
 # Trilium Notes pour YunoHost
 
-[![Niveau d'intégration](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)  
+[![Niveau d'intégration](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 [![Installer trilium avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
-*[Read this readme in english.](./README.md)* 
+*[Read this readme in english.](./README.md)*
 
 > *Ce package vous permet d'installer Trilium Notes rapidement et simplement sur un serveur YunoHost.  
 Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install) pour apprendre comment l'installer.*
@@ -11,7 +11,7 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/#/install
 ## Vue d'ensemble
 Trilium Notes est une application de prise de note hiérarchique semblable a Evernote, avec maintes fonctions avancées, centrée sur la constuction d'une large base de connsaissances personelle.
 
-**Version incluse :** 0.46.8
+**Version incluse :** 0.46.9
 
 ## Captures d'écran
 
@@ -23,7 +23,7 @@ On vous demandera de choisir un nom d'utilisateur et mot de passe quand vous ins
 
 ## Documentation
 
- * Documentation officielle : https://github.com/zadam/trilium/wiki
+* Documentation officielle : https://github.com/zadam/trilium/wiki
 
 #### Support multi-utilisateur
 
@@ -37,9 +37,9 @@ On vous demandera de choisir un nom d'utilisateur et mot de passe quand vous ins
 
 ## Liens
 
- * Signaler un bug : https://github.com/YunoHost-Apps/trilium_ynh/issues
- * Dépôt de l'application principale : https://github.com/zadam/trilium
- * Site web YunoHost : https://yunohost.org/
+* Signaler un bug : https://github.com/YunoHost-Apps/trilium_ynh/issues
+* Dépôt de l'application principale : https://github.com/zadam/trilium
+* Site web YunoHost : https://yunohost.org/
 
 ---
 
