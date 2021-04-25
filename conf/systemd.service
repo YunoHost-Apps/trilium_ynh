@@ -7,9 +7,9 @@ Type=simple
 User=__APP__
 Group=__APP__
 Environment=TRILIUM_DATA_DIR=/home/yunohost.app/__APP__
-Environment="NODE_ENV=production"
+Environment=NODE_ENV=production
 WorkingDirectory=__FINALPATH__/
-ExecStart=__YNH_NODE__ __FINALPATH__/src/www
+ExecStart=/usr/bin/env bash -c "PATH=__NODEJS_PATH__:$PATH node __FINALPATH__/src/www"
 
 [Install]
 WantedBy=multi-user.target

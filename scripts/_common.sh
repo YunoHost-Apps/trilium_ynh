@@ -12,9 +12,9 @@ pkg_dependencies="nodejs npm libpng16-16 libpng-dev pkg-config autoconf libtool 
 #=================================================
 
 function set_node_vars {
-	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=10
+	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=12
 	ynh_use_nodejs
-	node_PATH=$nodejs_path:$(sudo -u $app sh -c 'echo $PATH')
+	node_path=$nodejs_path:$(sudo -u $app sh -c 'echo $PATH')
 }
 
 function build_node_app {
@@ -22,7 +22,7 @@ function build_node_app {
 	pushd $final_path || ynh_die
 		chown -R $app:$app $final_path
 		sudo -u $app touch $final_path/.yarnrc
-		sudo -u $app "env PATH=$node_PATH" yarn --cache-folder $final_path/yarn-cache --use-yarnrc $final_path/.yarnrc install 2>&1
+		sudo -u $app "env PATH=$node_path" yarn --cache-folder $final_path/yarn-cache --use-yarnrc $final_path/.yarnrc install 2>&1
 		chown -R root:root $final_path
 	popd || ynh_die
 }
