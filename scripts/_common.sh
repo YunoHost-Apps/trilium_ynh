@@ -12,7 +12,7 @@ pkg_dependencies="nodejs npm libpng16-16 libpng-dev pkg-config autoconf libtool 
 #=================================================
 
 function set_node_vars {
-	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=12
+	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=14
 	ynh_use_nodejs
 	node_path="$nodejs_path:$(sudo -u $app sh -c 'echo $PATH')"
 }
