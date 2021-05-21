@@ -4,7 +4,7 @@
     "packaging_format": 1,
     "description": {
         "en": "A hierarchical note taking application with focus on building large personal knowledge base",
-        "fr": "Une application de prise de note hiérarchique centrée sur la constuction d'une large base de connsaissances personelle"
+        "fr": "Une application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
     },
     "version": "0.47.2~ynh1",
     "url": "https://github.com/zadam/trilium",

@@ -9,9 +9,9 @@
 If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/install) to learn how to install it.*
 
 ## Overview
-Trilium Notes is an Evernote-like hierechical note taking application with many advanced features, focused on building a large personal knowledge base.
+Trilium Notes is an Evernote-like hierarchical note taking application with many advanced features, focused on building a large personal knowledge base.
 
-**Shipped version:** 0.47.2
+**Shipped version:** 0.47.3
 
 ## Screenshots
 
@@ -19,7 +19,7 @@ Trilium Notes is an Evernote-like hierechical note taking application with many 
 
 ## Configuration
 
-You will be asked to choose a username and password when you first access the app. You can configue Trillium from the settings menu of the app interface.
+You will be asked to choose a username and password when you first access the app. You can configure Trillium from the settings menu of the app interface.
 
 ## Documentation
 
