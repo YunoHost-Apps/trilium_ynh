@@ -114,7 +114,7 @@ build_node_app
 ynh_script_progression --message="Configuring a systemd service..." --weight=1
 
 # Create a dedicated systemd config
-ynh_add_systemd_config -v nodejs_path
+ynh_add_systemd_config
 
 #=================================================
 # ADD A CONFIGURATION
