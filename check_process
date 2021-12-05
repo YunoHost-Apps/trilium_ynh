@@ -5,8 +5,8 @@
 
 ;; Test complet
 	; Manifest
-		domain="domain.tld"	(DOMAIN)
-		is_public=1	(PUBLIC|public=1|private=0)
+		domain="domain.tld"
+		is_public=1
 	; Checks
 		pkg_linter=1
 		setup_sub_dir=0

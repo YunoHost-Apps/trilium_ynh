@@ -3,8 +3,8 @@
     "id": "trilium",
     "packaging_format": 1,
     "description": {
-        "en": "A hierarchical note taking application with focus on building large personal knowledge base",
-        "fr": "Une application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
+        "en": "Hierarchical note taking application with focus on building large personal knowledge base",
+        "fr": "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
     },
     "version": "0.48.9~ynh1",
     "url": "https://github.com/zadam/trilium",
@@ -14,7 +14,7 @@
         "email": "jules.bertholet@gmail.com"
     },
     "requirements": {
-        "yunohost": ">= 4.1.3"
+        "yunohost": ">= 4.3.0"
     },
     "multi_instance": true,
     "services": [
@@ -24,8 +24,7 @@
         "install" : [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "example.com"
+                "type": "domain"
             },
             {
                 "name": "is_public",
