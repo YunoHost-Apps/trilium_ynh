@@ -44,6 +44,12 @@ function set_permissions {
 	chmod -R g=u,g-w,o-rwx "$data_path"
 }
 
+function setup_sources {
+	ynh_secure_remove "$final_path"
+	ynh_setup_source --dest_dir="$final_path"
+	mkdir -p "$data_path"
+}
+
 #=================================================
 # EXPERIMENTAL HELPERS
 #=================================================

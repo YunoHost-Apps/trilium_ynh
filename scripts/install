@@ -76,11 +76,9 @@ ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ st
 ynh_script_progression --message="Setting up source files..." --weight=5
 
 ynh_app_setting_set --app=$app --key=final_path --value=$final_path
-# Download, check integrity, uncompress and patch the source from app.src
-ynh_setup_source --dest_dir="$final_path"
-
 ynh_app_setting_set --app=$app --key=data_path --value=$data_path
-mkdir -p $data_path
+
+setup_sources
 
 #=================================================
 # NGINX CONFIGURATION
