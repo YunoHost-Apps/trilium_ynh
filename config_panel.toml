@@ -11,4 +11,4 @@ services = ["__APP__"]
         ask = "Instance name"
         type = "string"
         help = "Choose a unique name for this instance"
-        bind = "instanceName:__FINAL_PATH__/config.ini"
+        bind = "instanceName:__FINALPATH__/config.ini"
