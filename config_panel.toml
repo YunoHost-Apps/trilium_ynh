@@ -8,7 +8,7 @@ services = ["__APP__"]
     name = "Configuration Options"
 
         [main.config.instance_name]
-        ask = "Instance name"
+        ask = "Set Instance name"
         type = "string"
         help = "Choose a unique name for this instance"
         bind = "instanceName:__FINALPATH__/config.ini"
