@@ -1,0 +1,14 @@
+version = "1.0"
+
+[main]
+name = "Trilium configuration"
+services = ["__APP__"]
+
+    [main.config]
+    name = "Configuration Options"
+
+        [main.config.instance_name]
+        ask = "Instance name"
+        type = "string"
+        help = "Choose a unique name for this instance"
+        bind = "instanceName:__FINAL_PATH__/config.ini"

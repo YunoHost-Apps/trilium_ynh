@@ -22,7 +22,7 @@ admin=$(ynh_app_setting_get --app=$app --key=admin)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 data_path=$(ynh_app_setting_get --app=$app --key=data_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
-instance_name=""
+
 instance_name=$(ynh_app_setting_get --app=$app --key=instance_name)
 
 #=================================================
@@ -53,6 +53,16 @@ ynh_abort_if_errors
 ynh_script_progression --message="Stopping a systemd service..." --weight=60
 
 ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+if [ -z "$instance_name" ]; then
+	instance_name=""
+	ynh_app_setting_set --app=$app --key=instance_name --value=$instance_name
+fi
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
