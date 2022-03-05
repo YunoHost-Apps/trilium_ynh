@@ -79,8 +79,12 @@ ynh_remove_nodejs
 # REMOVE VARIOUS FILES
 #=================================================
 
-# Remove the data directory
-ynh_secure_remove --file="$data_path"
+# Remove the data directory if --purge option is used
+if [ "${YNH_APP_PURGE:-0}" -eq 1 ]
+then
+	ynh_script_progression --message="Removing app data directory..." --weight=1
+	ynh_secure_remove --file="$data_path"
+fi
 
 #=================================================
 # GENERIC FINALIZATION
