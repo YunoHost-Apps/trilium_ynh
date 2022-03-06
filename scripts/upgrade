@@ -129,7 +129,7 @@ ynh_add_systemd_config
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Updating a configuration file..." --time --weight=1
+ynh_script_progression --message="Updating a configuration file..." --weight=1
 
 ynh_add_config --template="config.ini" --destination="$final_path/config.ini"
 ln -sf $final_path/config.ini $data_path/config.ini
