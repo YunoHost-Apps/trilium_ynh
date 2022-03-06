@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-Environment=TRILIUM_DATA_DIR=/home/yunohost.app/__APP__
+Environment=TRILIUM_DATA_DIR=__DATA_PATH__
 Environment=NODE_ENV=production
 WorkingDirectory=__FINALPATH__/
 ExecStart=/usr/bin/env bash -c "PATH=__NODEJS_PATH__:$PATH node __FINALPATH__/src/www"
