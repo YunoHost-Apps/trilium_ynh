@@ -13,7 +13,7 @@ pkg_dependencies="nodejs npm libpng16-16 libpng-dev pkg-config autoconf libtool 
 
 function set_node_vars {
 	nodejs_version=$(ynh_app_setting_get --app=$app --key=nodejs_version)
-	if [ $nodejs_version -ne 16 ]; then 
+	if [ "$nodejs_version" -ne 16 ]; then 
 		ynh_exec_warn_less ynh_remove_nodejs
 	fi
 	ynh_exec_warn_less ynh_install_nodejs --nodejs_version=16
