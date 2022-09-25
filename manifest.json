@@ -6,7 +6,7 @@
         "en": "A hierarchical note taking application with focus on building large personal knowledge base",
         "fr": "Une application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
     },
-    "version": "0.52.3~ynh2",
+    "version": "0.55.1~ynh1",
     "url": "https://github.com/zadam/trilium",
     "upstream": {
         "license": "AGPL-3.0-only",
