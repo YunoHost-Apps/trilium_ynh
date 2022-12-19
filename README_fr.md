@@ -23,7 +23,6 @@ Trilium Notes est une application de prise de note hiérarchique semblable a Eve
 ## Captures d'écran
 
 ![Capture d'écran de Trilium Notes](./doc/screenshots/screenshot.png)
-![Capture d'écran de Trilium Notes](./doc/screenshots/example.jpg)
 
 ## Avertissements / informations importantes
 

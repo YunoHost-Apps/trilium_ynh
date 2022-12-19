@@ -23,7 +23,6 @@ Trilium Notes is an Evernote-like hierarchical note taking application with many
 ## Screenshots
 
 ![Screenshot of Trilium Notes](./doc/screenshots/screenshot.png)
-![Screenshot of Trilium Notes](./doc/screenshots/example.jpg)
 
 ## Disclaimers / important information
 
