@@ -18,7 +18,7 @@ Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour
 Trilium Notes est une application de prise de note hiérarchique semblable a Evernote, avec maintes fonctions avancées, centrée sur la construction d'une large base de connaissances personnelle.
 
 
-**Version incluse :** 0.55.1~ynh1
+**Version incluse :** 0.57.5~ynh1
 
 ## Captures d'écran
 
