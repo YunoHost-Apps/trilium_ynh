@@ -23,7 +23,6 @@ Trilium Notes is an Evernote-like hierarchical note taking application with many
 ## Screenshots
 
 ![Screenshot of Trilium Notes](./doc/screenshots/screenshot.png)
-![Screenshot of Trilium Notes](./doc/screenshots/example.jpg)
 
 ## Disclaimers / important information
 
@@ -33,7 +32,6 @@ You will be asked to choose a username and password when you first access the ap
 
 ## Documentation and resources
 
-* Official app website: <https://github.com/zadam/trilium>
 * Official admin documentation: <https://github.com/zadam/trilium/wiki>
 * Upstream app code repository: <https://github.com/zadam/trilium>
 * YunoHost documentation for this app: <https://yunohost.org/app_trilium>

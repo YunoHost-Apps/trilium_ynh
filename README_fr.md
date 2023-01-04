@@ -23,7 +23,6 @@ Trilium Notes est une application de prise de note hiérarchique semblable a Eve
 ## Captures d'écran
 
 ![Capture d'écran de Trilium Notes](./doc/screenshots/screenshot.png)
-![Capture d'écran de Trilium Notes](./doc/screenshots/example.jpg)
 
 ## Avertissements / informations importantes
 
@@ -33,7 +32,6 @@ On vous demandera de choisir un nom d'utilisateur et mot de passe quand vous ins
 
 ## Documentations et ressources
 
-* Site officiel de l'app : <https://github.com/zadam/trilium>
 * Documentation officielle de l'admin : <https://github.com/zadam/trilium/wiki>
 * Dépôt de code officiel de l'app : <https://github.com/zadam/trilium>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_trilium>

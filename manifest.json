@@ -10,7 +10,6 @@
     "url": "https://github.com/zadam/trilium",
     "upstream": {
         "license": "AGPL-3.0-only",
-        "website": "https://github.com/zadam/trilium",
         "admindoc": "https://github.com/zadam/trilium/wiki",
         "code": "https://github.com/zadam/trilium"
     },
