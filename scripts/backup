@@ -46,7 +46,7 @@ ynh_backup --src_path="$final_path"
 # BACKUP THE DATA DIR
 #=================================================
 
-ynh_backup --src_path="$datadir" --is_big
+ynh_backup --src_path="$datadir"
 
 #=================================================
 # BACKUP THE NGINX CONFIGURATION

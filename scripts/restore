@@ -66,7 +66,7 @@ chown -R $app:www-data "$final_path"
 #=================================================
 ynh_script_progression --message="Restoring the data directory..."
 
-ynh_restore_file --origin_path="$datadir" --not_mandatory
+ynh_restore_file --origin_path="$datadir"
 
 mkdir -p $datadir
 
