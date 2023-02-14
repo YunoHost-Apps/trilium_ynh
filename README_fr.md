@@ -6,6 +6,7 @@ It shall NOT be edited by hand.
 # Trilium Notes pour YunoHost
 
 [![Niveau d’intégration](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+
 [![Installer Trilium Notes avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
 *[Read this readme in english.](./README.md)*
@@ -18,7 +19,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 Trilium Notes est une application de prise de note hiérarchique semblable a Evernote, avec maintes fonctions avancées, centrée sur la construction d'une large base de connaissances personnelle.
 
 
-**Version incluse :** 0.57.5~ynh1
+**Version incluse :** 0.58.7~ynh1
 
 ## Captures d’écran
 
