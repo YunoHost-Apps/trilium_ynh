@@ -1,0 +1,68 @@
+packaging_format = 2
+
+id = "trilium"
+name = "Trilium Notes"
+description.en = "A hierarchical note taking application with focus on building large personal knowledge base"
+description.fr = "Une application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
+
+version = "0.58.8~ynh1"
+
+maintainers = ["Jules Bertholet"]
+
+[upstream]
+license = "AGPL-3.0-only"
+admindoc = "https://github.com/zadam/trilium/wiki"
+code = "https://github.com/zadam/trilium"
+cpe = "cpe:2.3:a:trilium_project:trilium"
+fund = "https://github.com/sponsors/zadam"
+
+[integration]
+yunohost = ">= 11.1.11.1"
+architectures = [ "amd64" ]
+multi_instance = true
+ldap = false
+sso = false
+disk = "200M"
+ram.build = "350M"
+ram.runtime = "110M"
+
+[install]
+    [install.domain]
+    # this is a generic question - ask strings are automatically handled by Yunohost's core
+    type = "domain"
+    full_domain = true
+
+    [install.init_main_permission]
+    help.en = "Required for sync with desktop app"
+    help.fr = "Nécessaire pour la synchronisation avec l'application desktop"
+    type = "group"
+    default = "visitors"
+
+    [install.instance_name]
+    ask.en = "Choose a unique name for this instance (optional)"
+    ask.fr = "Choisissez un nom unique pour cette instance (facultatif)"
+    type = "string"
+    example = "MyTrillium"
+    optional = true
+    default = ""
+
+[resources]
+
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
+    main.default = 8095
+
+    [resources.apt]
+    packages = "libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
+
+    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
+    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
+    extras.yarn.packages = "yarn"

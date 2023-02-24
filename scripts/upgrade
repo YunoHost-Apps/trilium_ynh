@@ -9,45 +9,52 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-#=================================================
-# LOAD SETTINGS
-#=================================================
-ynh_script_progression --message="Loading installation settings..." --weight=1
+# Settings are automatically loaded as bash variables
+# in every app script context, therefore typically these will exist:
+# - $domain
+# - $path
+# - $language
+# - $install_dir
+# - $port
+# ...
 
-app=$YNH_APP_INSTANCE_NAME
+# In the context of upgrade,
+# - resources are automatically provisioned / updated / deleted (depending on existing resources)
+# - a safety backup is automatically created by the core and will be restored if the upgrade fails
 
-domain=$(ynh_app_setting_get --app=$app --key=domain)
-path_url=$(ynh_app_setting_get --app=$app --key=path)
-admin=$(ynh_app_setting_get --app=$app --key=admin)
-final_path=$(ynh_app_setting_get --app=$app --key=final_path)
-datadir=$(ynh_app_setting_get --app=$app --key=datadir)
-port=$(ynh_app_setting_get --app=$app --key=port)
-instance_name=$(ynh_app_setting_get --app=$app --key=instance_name)
-
-#=================================================
-# CHECK VERSION
-#=================================================
-ynh_script_progression --message="Checking version..."
-
+### This helper will compare the version of the currently installed app and the version of the upstream package.
+### $upgrade_type can have 2 different values
+### - UPGRADE_APP if the upstream app version has changed
+### - UPGRADE_PACKAGE if only the YunoHost package has changed
+### ynh_check_app_version_changed will stop the upgrade if the app is up to date.
+### UPGRADE_APP should be used to upgrade the core app only if there's an upgrade to do.
 upgrade_type=$(ynh_check_app_version_changed)
 
 #=================================================
-# BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
-#=================================================
-ynh_script_progression --message="Backing up the app before upgrading (may take a while)..." --weight=15
-
-# Backup the current version of the app
-ynh_backup_before_upgrade
-ynh_clean_setup () {
-	ynh_clean_check_starting
-	# Restore it if the upgrade fails
-	ynh_restore_upgradebackup
-}
-# Exit if an error occurs during the execution of the script
-ynh_abort_if_errors
-
-#=================================================
 # STANDARD UPGRADE STEPS
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+#ynh_script_progression --message="Ensuring downward compatibility..." --time --weight=1
+
+#
+# N.B. : the followings setting migrations snippets are provided as *EXAMPLES*
+# of what you may want to do in some cases (e.g. a setting was not defined on
+# some legacy installs and you therefore want to initiaze stuff during upgrade)
+#
+
+# If db_name doesn't exist, create it
+#if [ -z "$db_name" ]; then
+#	db_name=$(ynh_sanitize_dbid --db_name=$app)
+#	ynh_app_setting_set --app=$app --key=db_name --value=$db_name
+#fi
+
+# If install_dir doesn't exist, create it
+#if [ -z "$install_dir" ]; then
+#	install_dir=/var/www/$app
+#	ynh_app_setting_set --app=$app --key=install_dir --value=$install_dir
+#fi
+
 #=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
@@ -56,101 +63,88 @@ ynh_script_progression --message="Stopping a systemd service..." --weight=60
 ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 
 #=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-ynh_script_progression --message="Ensuring downward compatibility..."
-
-# If datadir doesn't exist, create it
-if [ -z "$datadir" ]; then
-	datadir=$(ynh_app_setting_get --app=$app --key=data_path)
-	ynh_app_setting_set --app=$app --key=datadir --value=$datadir
-	ynh_app_setting_delete --app=$app --key=data_path
-fi
-
-#=================================================
-# CREATE DEDICATED USER
-#=================================================
-ynh_script_progression --message="Making sure dedicated system user exists..." --weight=1
-
-# Create a dedicated user (if not existing)
-ynh_system_user_create --username=$app --home_dir="$final_path"
-
+# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD, ETC...)
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..."
+	ynh_script_progression --message="Upgrading source files..." --weight=10
 
 	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$final_path" --keep="config.ini"
+	ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
 
-	grep -v electron "$final_path/package.json" > "$final_path/server-package.json"
-	mv "$final_path/server-package.json" "$final_path/package.json"
+	grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
+	mv "$install_dir/server-package.json" "$install_dir/package.json"
 fi
 
-chmod 750 "$final_path"
-chmod -R o-rwx "$final_path"
-chown -R $app:www-data "$final_path"
+# $install_dir will automatically be initialized with some decent 
+# permission by default ... however, you may need to recursively reapply
+# ownership to all files such as after the ynh_setup_source step
+chmod 750 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:www-data "$install_dir"
 
 #=================================================
-# UPGRADE DEPENDENCIES
+# UPGRADE NODEJS
 #=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=5
 
-ynh_exec_warn_less ynh_install_app_dependencies $pkg_dependencies
+ynh_script_progression --message="Upgrading nodejs..." --weight=5
+
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-ynh_exec_warn_less ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
 
-#=================================================
-# NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
-
-# Create a dedicated NGINX config
-ynh_add_nginx_config
-
-#=================================================
-# SPECIFIC UPGRADE
 #=================================================
 # INSTALL NODE PACKAGES
 #=================================================
 ynh_script_progression --message="Installing Node.js packages ..." --weight=45
 
-pushd "$final_path"
+pushd "$install_dir"
 	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm rebuild
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install ./
+	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm rebuild ./
 popd
 
 #=================================================
-# UPDATE A CONFIG FILE
+# REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Updating a configuration file..."
+ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
-ynh_add_config --template="../conf/config.ini" --destination="$final_path/config.ini"
-ln -sf $final_path/config.ini $datadir/config.ini
+# This should be a literal copypasta of what happened in the install's "System configuration" section
 
-chmod 400 "$final_path/config.ini"
-chown $app:$app "$final_path/config.ini"
+ynh_add_nginx_config
 
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Upgrading systemd configuration..." --weight=1
-
-# Create a dedicated systemd config
 ynh_add_systemd_config
 
-#=================================================
-# GENERIC FINALIZATION
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
-
 yunohost service add $app --description="Trilium Notes app" --log="systemd"
+
+#=================================================
+# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS, ...)
+#=================================================
+# UPDATE A CONFIG FILE
+#=================================================
+ynh_script_progression --message="Updating a configuration file..." --weight=1
+
+### Same as during install
+###
+### The file will automatically be backed-up if it's found to be manually modified (because
+### ynh_add_config keeps track of the file's checksum)
+
+ynh_add_config --template="../conf/config.ini" --destination="$install_dir/config.ini"
+ln -sf $install_dir/config.ini $data_dir/config.ini
+
+# FIXME: this should be handled by the core in the future
+# You may need to use chmod 600 instead of 400,
+# for example if the app is expected to be able to modify its own config
+chmod 400 "$install_dir/config.ini"
+chown $app:$app "$install_dir/config.ini"
+
+### For more complex cases where you want to replace stuff using regexes,
+### you shoud rely on ynh_replace_string (which is basically a wrapper for sed)
+### When doing so, you also need to manually call ynh_store_file_checksum
+###
+### ynh_replace_string --match_string="match_string" --replace_string="replace_string" --target_file="$install_dir/some_config_file"
+### ynh_store_file_checksum --file="$install_dir/some_config_file"
 
 #=================================================
 # START SYSTEMD SERVICE
@@ -158,13 +152,6 @@ yunohost service add $app --description="Trilium Notes app" --log="systemd"
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
 ynh_systemd_action --service_name=$app --action="start" --log_path="systemd" --line_match="Listening on port"
-
-#=================================================
-# RELOAD NGINX
-#=================================================
-ynh_script_progression --message="Reloading NGINX web server..." --weight=1
-
-ynh_systemd_action --service_name=nginx --action=reload
 
 #=================================================
 # END OF SCRIPT
