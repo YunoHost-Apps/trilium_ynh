@@ -60,8 +60,6 @@ chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
-ynh_exec_as root echo ~$app
-
 #=================================================
 # SPECIFIC SETUP
 #=================================================
@@ -151,7 +149,7 @@ yunohost service add $app --description="Trilium Notes app" --log="systemd"
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+ynh_script_progression --message="Adding a configuration file..."
 
 ### You can add specific configuration files.
 ###
