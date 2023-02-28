@@ -6,13 +6,13 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-Environment=TRILIUM_DATA_DIR=__DATADIR__
+Environment=TRILIUM_DATA_DIR=__DATA_DIR__
 Environment=TRILIUM_PORT=__PORT__
 Environment="__YNH_NODE_LOAD_PATH__"
 Environment=NODE_ENV=production
 Environment=TRILIUM_ENV=dev
-WorkingDirectory=__FINALPATH__/
-ExecStart=__YNH_NODE__ __FINALPATH__/src/www
+WorkingDirectory=__INSTALL_DIR__/
+ExecStart=__YNH_NODE__ __INSTALL_DIR__/src/www
 
 [Install]
 WantedBy=multi-user.target
