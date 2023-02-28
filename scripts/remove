@@ -14,7 +14,6 @@ source /usr/share/yunohost/helpers
 #=================================================
 # REMOVE SYSTEMD SERVICE 
 #=================================================
-
 ynh_script_progression --message="Removing system configurations related to $app..."
 
 # This should be a symetric version of what happens in the install script
