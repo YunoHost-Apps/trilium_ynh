@@ -2,8 +2,8 @@ packaging_format = 2
 
 id = "trilium"
 name = "Trilium Notes"
-description.en = "A hierarchical note taking application with focus on building large personal knowledge base"
-description.fr = "Une application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
+description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
+description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
 version = "0.58.8~ynh1"
 
