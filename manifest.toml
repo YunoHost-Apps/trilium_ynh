@@ -28,7 +28,6 @@ ram.runtime = "110M"
 
 [install]
     [install.domain]
-    # this is a generic question - ask strings are automatically handled by Yunohost's core
     type = "domain"
     full_domain = true
 
