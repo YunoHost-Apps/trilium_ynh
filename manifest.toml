@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
 description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.58.8~ynh1"
+version = "0.59.1~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -17,7 +17,7 @@ cpe = "cpe:2.3:a:trilium_project:trilium"
 fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.1.13"
+yunohost = ">= 11.1.12"
 architectures = "all"
 multi_instance = true
 ldap = false
