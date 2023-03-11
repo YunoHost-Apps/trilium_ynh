@@ -6,4 +6,4 @@ test_format = 1.0
     # Commits to test upgrade from
     # -------------------------------
 
-    test_upgrade_from.85a53b5.name = "Merge pull request #36 from YunoHost-Apps/testing"
+    test_upgrade_from.fac7d16.name = "Merge pull request #40 from YunoHost-Apps/testing"
