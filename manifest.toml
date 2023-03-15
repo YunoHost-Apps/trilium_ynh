@@ -18,7 +18,7 @@ fund = "https://github.com/sponsors/zadam"
 
 [integration]
 yunohost = ">= 11.1.15"
-architectures = [ "amd64", "arm64", "amdhf" ]
+architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 ldap = false
 sso = false
