@@ -29,7 +29,10 @@ ram.runtime = "110M"
 [install]
     [install.domain]
     type = "domain"
-    full_domain = true
+
+    [install.path]
+    type = "path"
+    default = "/trilium"
 
     [install.init_main_permission]
     help.en = "Enabling visitors access is required for sync with desktop app"
