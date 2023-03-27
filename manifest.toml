@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
 description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.58.8~ynh1"
+version = "0.59.2~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -17,8 +17,8 @@ cpe = "cpe:2.3:a:trilium_project:trilium"
 fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.1.11.1"
-architectures = [ "amd64" ]
+yunohost = ">= 11.1.15"
+architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 ldap = false
 sso = false
@@ -29,7 +29,10 @@ ram.runtime = "110M"
 [install]
     [install.domain]
     type = "domain"
-    full_domain = true
+
+    [install.path]
+    type = "path"
+    default = "/trilium"
 
     [install.init_main_permission]
     help.en = "Enabling visitors access is required for sync with desktop app"
@@ -46,6 +49,13 @@ ram.runtime = "110M"
     default = ""
 
 [resources]
+
+    [resources.sources]
+
+        [resources.sources.main]
+        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.59.2.tar.gz"
+        sha256 = "29dfd218cfc9f1263e2c38fa098ce7363cbf9bc802ff9776a675159dc8b6f368"
+        rename = "v0.59.2.tar.gz"
 
     [resources.system_user]
 

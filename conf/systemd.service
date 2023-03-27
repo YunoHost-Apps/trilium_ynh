@@ -13,6 +13,7 @@ Environment=NODE_ENV=production
 Environment=TRILIUM_ENV=dev
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__YNH_NODE__ __INSTALL_DIR__/src/www
+Restart=always
 
 
 # Sandboxing options to harden security
