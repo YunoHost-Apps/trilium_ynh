@@ -17,7 +17,7 @@ cpe = "cpe:2.3:a:trilium_project:trilium"
 fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.1.15"
+yunohost = ">= 11.1.16"
 architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 ldap = false
@@ -56,6 +56,7 @@ ram.runtime = "110M"
         url = "https://github.com/zadam/trilium/archive/refs/tags/v0.59.2.tar.gz"
         sha256 = "29dfd218cfc9f1263e2c38fa098ce7363cbf9bc802ff9776a675159dc8b6f368"
         rename = "v0.59.2.tar.gz"
+        autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
 
