@@ -29,7 +29,6 @@ ynh_setup_source --dest_dir="$install_dir"
 grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
 mv "$install_dir/server-package.json" "$install_dir/package.json"
 
-chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
