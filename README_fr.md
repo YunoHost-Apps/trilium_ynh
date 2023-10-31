@@ -29,7 +29,7 @@ Trilium Notes est une application de prise de note hiérarchique semblable a Eve
 
 * Documentation officielle de l’admin : <https://github.com/zadam/trilium/wiki>
 * Dépôt de code officiel de l’app : <https://github.com/zadam/trilium>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_trilium>
+* YunoHost Store: <https://apps.yunohost.org/app/trilium>
 * Signaler un bug : <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 
 ## Informations pour les développeurs
