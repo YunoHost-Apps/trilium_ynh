@@ -35,9 +35,6 @@ then
 	mv "$install_dir/server-package.json" "$install_dir/package.json"
 fi
 
-# $install_dir will automatically be initialized with some decent 
-# permission by default ... however, you may need to recursively reapply
-# ownership to all files such as after the ynh_setup_source step
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
@@ -64,8 +61,6 @@ popd
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
-
-# This should be a literal copypasta of what happened in the install's "System configuration" section
 
 ynh_add_nginx_config
 

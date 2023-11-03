@@ -28,10 +28,7 @@ ynh_setup_source --dest_dir="$install_dir"
 
 grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
 mv "$install_dir/server-package.json" "$install_dir/package.json"
-# $install_dir will automatically be initialized with some decent 
-# permission by default ... however, you may need to recursively reapply
-# ownership to all files such as after the ynh_setup_source step
-chmod 750 "$install_dir"
+
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
@@ -67,8 +64,6 @@ yunohost service add $app --description="Trilium Notes app" --log="systemd"
 # ADD A CONFIGURATION
 #=================================================
 ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-### You can add specific configuration files.
 
 ynh_add_config --template="../conf/config.ini" --destination="$install_dir/config.ini"
 ln -sf $install_dir/config.ini $data_dir/config.ini
