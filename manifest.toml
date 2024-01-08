@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
 description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.62.4~ynh1"
+version = "0.62.5~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -53,8 +53,8 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.62.4.tar.gz"
-        sha256 = "d8204d7cf2488c4119b76124596873b95e7be9a1ccfc0b10faba7c26e25636ca"
+        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.62.5.tar.gz"
+        sha256 = "59b34be2f86cb22dc3cc9cb082918571b3efc0757094de9aa9e890d9f29526e1"
         rename = "v0.60.4.tar.gz"
         autoupdate.strategy = "latest_github_tag"
 
