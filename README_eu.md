@@ -19,7 +19,7 @@ EZ editatu eskuz.
 Trilium Notes is an Evernote-like hierarchical note taking application with many advanced features, focused on building a large personal knowledge base.
 
 
-**Paketatutako bertsioa:** 0.63.5~ynh1
+**Paketatutako bertsioa:** 0.63.6~ynh1
 
 ## Pantaila-argazkiak
 
