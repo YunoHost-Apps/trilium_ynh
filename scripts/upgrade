@@ -11,26 +11,15 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 
 #=================================================
-# "REBUILD" THE APP (DEPLOY NEW SOURCES, RERUN NPM BUILD, ETC...)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression "Upgrading source files..."
 
-# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
-if ynh_app_upstream_version_changed
-then
-	ynh_script_progression "Upgrading source files..."
+ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
 
-	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
+grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
+mv "$install_dir/server-package.json" "$install_dir/package.json"
 
-	grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
-	mv "$install_dir/server-package.json" "$install_dir/package.json"
-fi
-
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 750 "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # UPGRADE NODEJS
 #=================================================
@@ -44,9 +33,8 @@ ynh_nodejs_install
 ynh_script_progression "Installing Node.js packages ..."
 
 pushd "$install_dir"
-
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH npm install ./
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH npm rebuild ./
+	ynh_hide_warnings ynh_exec_as_app npm install ./
+	ynh_hide_warnings ynh_exec_as_app npm rebuild ./
 popd
 
 #=================================================
@@ -61,17 +49,12 @@ ynh_config_add_systemd
 yunohost service add $app --description="Trilium Notes app" --log="systemd"
 
 #=================================================
-# RECONFIGURE THE APP (UPDATE CONF, APPLY MIGRATIONS, ...)
-#=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating configuration..."
 
 ynh_config_add --template="config.ini" --destination="$install_dir/config.ini"
 ln -sf $install_dir/config.ini $data_dir/config.ini
-
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.ini"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.ini"
 
 #=================================================
 # START SYSTEMD SERVICE
