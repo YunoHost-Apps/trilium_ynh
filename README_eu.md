@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Trilium Notes YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 
 [![Instalatu Trilium Notes YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
