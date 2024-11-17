@@ -11,14 +11,12 @@ maintainers = ["Jules Bertholet"]
 
 [upstream]
 license = "AGPL-3.0-only"
-admindoc = "https://github.com/zadam/trilium/wiki"
-code = "https://github.com/zadam/trilium"
+admindoc = "https://triliumnext.github.io/Docs/"
+code = "https://github.com/TriliumNext/Notes"
 cpe = "cpe:2.3:a:trilium_project:trilium"
-fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.2.30"
-helpers_version = "2.1"
+yunohost = ">= 11.2"
 architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
 ldap = false
@@ -54,9 +52,9 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.63.7.tar.gz"
-        sha256 = "e2ce313758e84c879603853a912ebb2e088f71a3acc6daeb8b1a8dcc4cf7fde1"
-        rename = "v0.60.4.tar.gz"
+        url = "https://github.com/TriliumNext/Notes/archive/refs/tags/v0.90.8.tar.gz"
+        sha256 = "7c9f19db235abe50ac8f80a7a7b66d0088433fe3f7646d0cdc3ec16ac1e6b6db"
+        rename = "v0.90.8.tar.gz"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
