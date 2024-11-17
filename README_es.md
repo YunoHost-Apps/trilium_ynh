@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Trilium Notes para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 
 [![Instalar Trilium Notes con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
@@ -34,7 +34,7 @@ Trilium Notes is an Evernote-like hierarchical note taking application with many
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/trilium_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/trilium_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

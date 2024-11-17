@@ -5,7 +5,7 @@ NON debe editarse manualmente.
 
 # Trilium Notes para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 
 [![Instalar Trilium Notes con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
