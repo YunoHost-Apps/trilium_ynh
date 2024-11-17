@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Trilium Notes para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 
 [![Instalar Trilium Notes con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
@@ -16,10 +16,9 @@ No se debe editar a mano.
 
 ## Descripción general
 
-Trilium Notes is an Evernote-like hierarchical note taking application with many advanced features, focused on building a large personal knowledge base.
+TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
 
-
-**Versión actual:** 0.63.7~ynh1
+**Versión actual:** 0.90.8~ynh1
 
 ## Capturas
 
@@ -27,14 +26,14 @@ Trilium Notes is an Evernote-like hierarchical note taking application with many
 
 ## Documentaciones y recursos
 
-- Documentación administrador oficial: <https://github.com/zadam/trilium/wiki>
-- Repositorio del código fuente oficial de la aplicación : <https://github.com/zadam/trilium>
+- Documentación administrador oficial: <https://triliumnext.github.io/Docs/>
+- Repositorio del código fuente oficial de la aplicación : <https://github.com/TriliumNext/Notes>
 - Catálogo YunoHost: <https://apps.yunohost.org/app/trilium>
 - Reportar un error: <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/trilium_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/trilium_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 

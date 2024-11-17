@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Trilium Notes YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/trilium.svg)](https://dash.yunohost.org/appci/app/trilium) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
 
 [![Instalatu Trilium Notes YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
@@ -16,10 +16,9 @@ EZ editatu eskuz.
 
 ## Aurreikuspena
 
-Trilium Notes is an Evernote-like hierarchical note taking application with many advanced features, focused on building a large personal knowledge base.
+TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
 
-
-**Paketatutako bertsioa:** 0.63.7~ynh1
+**Paketatutako bertsioa:** 0.90.8~ynh1
 
 ## Pantaila-argazkiak
 
@@ -27,8 +26,8 @@ Trilium Notes is an Evernote-like hierarchical note taking application with many
 
 ## Dokumentazioa eta baliabideak
 
-- Administratzaileen dokumentazio ofiziala: <https://github.com/zadam/trilium/wiki>
-- Jatorrizko aplikazioaren kode-gordailua: <https://github.com/zadam/trilium>
+- Administratzaileen dokumentazio ofiziala: <https://triliumnext.github.io/Docs/>
+- Jatorrizko aplikazioaren kode-gordailua: <https://github.com/TriliumNext/Notes>
 - YunoHost Denda: <https://apps.yunohost.org/app/trilium>
 - Eman errore baten berri: <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 
