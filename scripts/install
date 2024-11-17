@@ -11,31 +11,23 @@ ynh_script_progression "Installing nodejs..."
 ynh_nodejs_install
 
 #=================================================
-# APP "BUILD" (DEPLOYING SOURCES, VENV, COMPILING ETC)
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir="$install_dir"
 
 grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
 mv "$install_dir/server-package.json" "$install_dir/package.json"
 
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
-#=================================================
-# SPECIFIC SETUP
 #=================================================
 # INSTALL NODE PACKAGES
 #=================================================
 ynh_script_progression "Installing Node.js packages ..."
 
 pushd "$install_dir"
-
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH npm install ./
-	ynh_hide_warnings ynh_exec_as_app node_load_PATH npm rebuild ./
+	ynh_hide_warnings ynh_exec_as_app npm install ./
+	ynh_hide_warnings ynh_exec_as_app npm rebuild ./
 popd
 
 #=================================================
@@ -43,16 +35,12 @@ popd
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
 ynh_config_add_systemd
 
 yunohost service add $app --description="Trilium Notes app" --log="systemd"
 
-#=================================================
-# APP INITIAL CONFIGURATION
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
@@ -61,18 +49,15 @@ ynh_script_progression "Adding $app's configuration..."
 ynh_config_add --template="config.ini" --destination="$install_dir/config.ini"
 ln -sf $install_dir/config.ini $data_dir/config.ini
 
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod 400 "$install_dir/config.ini"
-#REMOVEME? Assuming the file is setup using ynh_config_add, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown $app:$app "$install_dir/config.ini"
-
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
 ynh_systemctl --service=$app --action="start"
 
 #=================================================
 # END OF SCRIPT
 #=================================================
+
 ynh_script_progression "Installation of $app completed"
