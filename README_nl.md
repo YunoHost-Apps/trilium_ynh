@@ -26,8 +26,8 @@ TriliumNext Notes is an open-source, cross-platform hierarchical note taking app
 
 ## Documentatie en bronnen
 
-- Officiele beheerdersdocumentatie: <https://github.com/zadam/trilium/wiki>
-- Upstream app codedepot: <https://github.com/zadam/trilium>
+- Officiele beheerdersdocumentatie: <https://triliumnext.github.io/Docs/>
+- Upstream app codedepot: <https://github.com/TriliumNext/Notes>
 - YunoHost-store: <https://apps.yunohost.org/app/trilium>
 - Meld een bug: <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 
