@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking app with focus on building large personal knowledge base"
 description.fr = "Prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.90.8~ynh1"
+version = "0.91.6~ynh1"
 
 maintainers = []
 
