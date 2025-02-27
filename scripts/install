@@ -47,7 +47,7 @@ ynh_script_progression "Installing the app..."
 pushd "$install_dir"
  	ynh_hide_warnings ynh_exec_as_app npm install
  	ynh_hide_warnings ynh_exec_as_app npm rebuild
- 	ynh_hide_warnings ynh_exec_as_app npm run webpack
+ 	#ynh_hide_warnings ynh_exec_as_app npm run webpack
 popd
 
 #=================================================
