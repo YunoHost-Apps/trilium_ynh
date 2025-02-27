@@ -4,31 +4,11 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# INSTALL NODEJS
-#=================================================
-ynh_script_progression "Installing nodejs..."
-
-ynh_nodejs_install
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
-
-grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
-mv "$install_dir/server-package.json" "$install_dir/package.json"
-
-#=================================================
-# INSTALL NODE PACKAGES
-#=================================================
-ynh_script_progression "Installing Node.js packages ..."
-
-pushd "$install_dir"
-	ynh_hide_warnings ynh_exec_as_app npm install ./
-	ynh_hide_warnings ynh_exec_as_app npm rebuild ./
-popd
 
 #=================================================
 # SYSTEM CONFIGURATION

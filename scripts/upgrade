@@ -17,26 +17,6 @@ ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="config.ini"
 
-grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
-mv "$install_dir/server-package.json" "$install_dir/package.json"
-
-#=================================================
-# UPGRADE NODEJS
-#=================================================
-ynh_script_progression "Upgrading nodejs..."
-
-ynh_nodejs_install
-
-#=================================================
-# INSTALL NODE PACKAGES
-#=================================================
-ynh_script_progression "Installing Node.js packages ..."
-
-pushd "$install_dir"
-	ynh_hide_warnings ynh_exec_as_app npm install ./
-	ynh_hide_warnings ynh_exec_as_app npm rebuild ./
-popd
-
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
@@ -61,7 +41,7 @@ ln -sf $install_dir/config.ini $data_dir/config.ini
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="Listening on port"
+ynh_systemctl --service=$app --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
