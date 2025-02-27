@@ -5,7 +5,9 @@
 
 # Trilium Notes для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/trilium)](https://ci-apps.yunohost.org/ci/apps/trilium/)
+![Состояние работы](https://apps.yunohost.org/badge/state/trilium)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/trilium)
 
 [![Установите Trilium Notes с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 

@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Trilium Notes untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/trilium)](https://ci-apps.yunohost.org/ci/apps/trilium/)
+![Status kerja](https://apps.yunohost.org/badge/state/trilium)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/trilium)
 
 [![Pasang Trilium Notes dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
