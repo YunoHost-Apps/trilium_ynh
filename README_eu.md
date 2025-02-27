@@ -20,7 +20,7 @@ EZ editatu eskuz.
 
 TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
 
-**Paketatutako bertsioa:** 0.90.8~ynh1
+**Paketatutako bertsioa:** 0.91.6~ynh1
 
 ## Pantaila-argazkiak
 
