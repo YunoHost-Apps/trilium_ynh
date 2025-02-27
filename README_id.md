@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Trilium Notes untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/trilium)](https://ci-apps.yunohost.org/ci/apps/trilium/)
+![Status kerja](https://apps.yunohost.org/badge/state/trilium)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/trilium)
 
 [![Pasang Trilium Notes dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
@@ -18,7 +20,7 @@ Ini TIDAK boleh diedit dengan tangan.
 
 TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
 
-**Versi terkirim:** 0.63.7~ynh1
+**Versi terkirim:** 0.91.6~ynh1
 
 ## Tangkapan Layar
 
@@ -26,8 +28,8 @@ TriliumNext Notes is an open-source, cross-platform hierarchical note taking app
 
 ## Dokumentasi dan sumber daya
 
-- Dokumentasi admin resmi: <https://github.com/zadam/trilium/wiki>
-- Depot kode aplikasi hulu: <https://github.com/zadam/trilium>
+- Dokumentasi admin resmi: <https://triliumnext.github.io/Docs/>
+- Depot kode aplikasi hulu: <https://github.com/TriliumNext/Notes>
 - Gudang YunoHost: <https://apps.yunohost.org/app/trilium>
 - Laporkan bug: <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 

@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Trilium Notes para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/trilium.svg)](https://ci-apps.yunohost.org/ci/apps/trilium/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/trilium.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/trilium.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/trilium)](https://ci-apps.yunohost.org/ci/apps/trilium/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/trilium)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/trilium)
 
 [![Instalar Trilium Notes con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=trilium)
 
@@ -18,7 +20,7 @@ NON debe editarse manualmente.
 
 TriliumNext Notes is an open-source, cross-platform hierarchical note taking application with focus on building large personal knowledge bases.
 
-**Versión proporcionada:** 0.63.7~ynh1
+**Versión proporcionada:** 0.91.6~ynh1
 
 ## Capturas de pantalla
 
@@ -26,8 +28,8 @@ TriliumNext Notes is an open-source, cross-platform hierarchical note taking app
 
 ## Documentación e recursos
 
-- Documentación oficial para admin: <https://github.com/zadam/trilium/wiki>
-- Repositorio de orixe do código: <https://github.com/zadam/trilium>
+- Documentación oficial para admin: <https://triliumnext.github.io/Docs/>
+- Repositorio de orixe do código: <https://github.com/TriliumNext/Notes>
 - Tenda YunoHost: <https://apps.yunohost.org/app/trilium>
 - Informar dun problema: <https://github.com/YunoHost-Apps/trilium_ynh/issues>
 

@@ -6,15 +6,13 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
+Environment="PATH=__PATH_WITH_NODEJS__"
+Environment="NODE_ENV=production"
 Environment=TRILIUM_DATA_DIR=__DATA_DIR__
 Environment=TRILIUM_PORT=__PORT__
-Environment="__YNH_NODE_LOAD_PATH__"
-Environment=NODE_ENV=production
-Environment=TRILIUM_ENV=dev
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__YNH_NODE__ __INSTALL_DIR__/src/www
+ExecStart=__NODEJS_DIR__/node __INSTALL_DIR__/src/www
 Restart=always
-
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
