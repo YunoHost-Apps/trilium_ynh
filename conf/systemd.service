@@ -8,7 +8,7 @@ User=__APP__
 Group=__APP__
 Environment=TRILIUM_DATA_DIR=__DATA_DIR__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/trilium.sh
+ExecStart=__INSTALL_DIR__/trilium --disable-gpu
 Restart=always
 
 # Sandboxing options to harden security
