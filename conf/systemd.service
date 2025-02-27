@@ -7,9 +7,8 @@ Type=simple
 User=__APP__
 Group=__APP__
 Environment=TRILIUM_DATA_DIR=__DATA_DIR__
-Environment=TRILIUM_PORT=__PORT__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/trilium
+ExecStart=__INSTALL_DIR__/trilium.sh
 Restart=always
 
 # Sandboxing options to harden security
