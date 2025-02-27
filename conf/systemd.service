@@ -10,7 +10,7 @@ Environment=TRILIUM_DATA_DIR=__DATA_DIR__
 Environment=TRILIUM_PORT=__PORT__
 Environment=TRILIUM_ENV=dev
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__NODEJS_DIR__/node __INSTALL_DIR__/trilium
+ExecStart=__INSTALL_DIR__/trilium
 Restart=always
 
 
