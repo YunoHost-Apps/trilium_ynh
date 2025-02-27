@@ -71,4 +71,6 @@ ram.runtime = "110M"
     main.url = "/"
 
     [resources.ports]
-    main.default = 8095
+
+    [resources.apt]
+    packages ="libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
