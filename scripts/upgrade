@@ -11,6 +11,13 @@ ynh_script_progression "Stopping $app's systemd service..."
 ynh_systemctl --service=$app --action="stop" --log_path="systemd"
 
 #=================================================
+# INSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression "Installing dependencies..."
+
+ynh_nodejs_install
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
@@ -35,6 +42,17 @@ ynh_script_progression "Updating configuration..."
 
 ynh_config_add --template="config.ini" --destination="$install_dir/config.ini"
 ln -sf $install_dir/config.ini $data_dir/config.ini
+
+#=================================================
+# INSTALL APP
+#=================================================
+ynh_script_progression "Installing the app..."
+
+pushd "$install_dir"
+ 	ynh_hide_warnings ynh_exec_as_app npm install
+ 	ynh_hide_warnings ynh_exec_as_app npm rebuild
+ 	ynh_hide_warnings ynh_exec_as_app npm run webpack
+popd
 
 #=================================================
 # START SYSTEMD SERVICE

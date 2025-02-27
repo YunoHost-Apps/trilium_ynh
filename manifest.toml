@@ -55,10 +55,8 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-linux-x64.zip"
-        amd64.sha256 = "9728576f43f239d933ca05082216be303995618e0285a5bcdd37d7a9dc54298f"
-        arm64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-linux-arm64.zip"
-        arm64.sha256 = "17fbcaccb75e1a697c48c5ac7744b46f17857f9fa5638b78a16a70d6982b701d"
+        url = "https://github.com/TriliumNext/Notes/archive/refs/tags/v0.91.6.tar.gz"
+        sha256 = "1484f8fc5a58fbfefa1fb6697ffbd1fdb20c61fd5bd20c1ae9217280a3717875"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
@@ -71,4 +69,6 @@ ram.runtime = "110M"
     main.url = "/"
 
     [resources.ports]
-    main.default = 8095
+
+    [resources.apt]
+    packages ="libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
