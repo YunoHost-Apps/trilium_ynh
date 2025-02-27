@@ -17,6 +17,9 @@ ynh_script_progression "Setting up source files..."
 
 ynh_setup_source --dest_dir="$install_dir"
 
+grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
+mv "$install_dir/server-package.json" "$install_dir/package.json"
+
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
