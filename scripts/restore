@@ -18,13 +18,6 @@ ynh_script_progression "Restoring the data directory..."
 ynh_restore "$data_dir"
 
 #=================================================
-# INSTALL NODEJS
-#=================================================
-ynh_script_progression "Installing nodejs..."
-
-ynh_nodejs_install
-
-#=================================================
 # RESTORE SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
@@ -41,7 +34,7 @@ yunohost service add $app --description="Trilium Notes app" --log="systemd"
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd" --wait_until="Listening on port"
+ynh_systemctl --service=$app --action="start" --log_path="systemd"
 
 ynh_systemctl --service=nginx --action=reload
 

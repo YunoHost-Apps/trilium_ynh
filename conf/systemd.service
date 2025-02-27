@@ -12,7 +12,7 @@ Environment="PATH=__PATH_WITH_NODEJS__"
 Environment=NODE_ENV=production
 Environment=TRILIUM_ENV=dev
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__NODEJS_DIR__/node __INSTALL_DIR__/src/www
+ExecStart=__NODEJS_DIR__/node __INSTALL_DIR__/trilium
 Restart=always
 
 

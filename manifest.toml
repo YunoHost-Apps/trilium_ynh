@@ -7,7 +7,7 @@ description.fr = "Prise de note hiérarchique centrée sur la construction d'une
 
 version = "0.90.8~ynh1"
 
-maintainers = ["Jules Bertholet"]
+maintainers = []
 
 [upstream]
 license = "AGPL-3.0-only"
@@ -16,12 +16,14 @@ code = "https://github.com/TriliumNext/Notes"
 cpe = "cpe:2.3:a:trilium_project:trilium"
 
 [integration]
-yunohost = ">= 11.2.30"
+yunohost = ">= 12.0.9"
 helpers_version = "2.1"
 architectures = [ "amd64", "arm64", "armhf" ]
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "200M"
 ram.build = "350M"
 ram.runtime = "110M"
@@ -53,9 +55,8 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/TriliumNext/Notes/archive/refs/tags/v0.90.8.tar.gz"
-        sha256 = "7c9f19db235abe50ac8f80a7a7b66d0088433fe3f7646d0cdc3ec16ac1e6b6db"
-        rename = "v0.90.8.tar.gz"
+        url = "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-linux-x64.zip"
+        sha256 = "9728576f43f239d933ca05082216be303995618e0285a5bcdd37d7a9dc54298f"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
@@ -69,10 +70,3 @@ ram.runtime = "110M"
 
     [resources.ports]
     main.default = 8095
-
-    [resources.apt]
-    packages = "libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
-
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
