@@ -73,4 +73,4 @@ ram.runtime = "110M"
     [resources.ports]
 
     [resources.apt]
-    packages ="libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
+    packages ="libnss3, libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
