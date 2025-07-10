@@ -74,3 +74,8 @@ ram.runtime = "110M"
 
     [resources.apt]
     packages ="libnss3, libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
+
+    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
+    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
+    extras.yarn.packages = "yarn"
+    
