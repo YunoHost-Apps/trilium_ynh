@@ -55,8 +55,8 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-x64.tar.xz"
-        amd64.sha256 = "825ec2759be2e1daf2b2c99b4ea67f18015ab2bd4929d9fed9a2b396a701a844"
+        amd64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-v0.96.0-linux-x64.zip"
+        amd64.sha256 = "bd7bfd870ca5b8655043bff37fb6fb4b2457edec4352d852b691289732ff4474"
         arm64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-arm64.tar.xz"
         arm64.sha256 = "b2f5f30a178dc794954d28eac44044760628684e532471511b4bfce8d9de8c8b"
         autoupdate.strategy = "latest_github_tag"
