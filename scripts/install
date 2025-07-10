@@ -9,6 +9,7 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Installing dependencies..."
 
 ynh_nodejs_install
+ynh_hide_warnings corepack enable && corepack prepare pnpm@latest --activate
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -42,9 +43,9 @@ ln -sf $install_dir/config.ini $data_dir/config.ini
 ynh_script_progression "Installing $app..."
 
 pushd "$install_dir"
-	ynh_hide_warnings ynh_exec_as_app npm install
-	ynh_hide_warnings ynh_exec_as_app npm rebuild
-	ynh_hide_warnings ynh_exec_as_app npm run webpack
+	ynh_hide_warnings ynh_exec_as_app pnpm install
+	ynh_hide_warnings ynh_exec_as_app pnpm rebuild
+	ynh_hide_warnings ynh_exec_as_app pnpm run webpack
 popd
 
 #=================================================
