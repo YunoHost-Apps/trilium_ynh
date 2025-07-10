@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking app"
 description.fr = "Application hiérarchique de prise de notes"
 
-version = "0.91.6~ynh1"
+version = "0.96.0~ynh1"
 
 maintainers = []
 
@@ -55,9 +55,9 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-linux-x64.zip"
+        amd64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.96.0/TriliumNextNotes-v0.96.0-linux-x64.zip"
         amd64.sha256 = "9728576f43f239d933ca05082216be303995618e0285a5bcdd37d7a9dc54298f"
-        arm64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.91.6/TriliumNextNotes-v0.91.6-linux-arm64.zip"
+        arm64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.96.0/TriliumNextNotes-v0.96.0-linux-arm64.zip"
         arm64.sha256 = "17fbcaccb75e1a697c48c5ac7744b46f17857f9fa5638b78a16a70d6982b701d"
         autoupdate.strategy = "latest_github_tag"
 
