@@ -7,8 +7,10 @@ Type=simple
 User=__APP__
 Group=__APP__
 Environment=TRILIUM_DATA_DIR=__DATA_DIR__
+Environment="PATH=__PATH_WITH_NODEJS__"
+Environment="NODE_ENV=production"
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/trilium --disable-gpu
+ExecStart=__NODEJS_DIR__/node src/www &
 Restart=always
 
 # Sandboxing options to harden security
