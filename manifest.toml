@@ -2,23 +2,23 @@ packaging_format = 2
 
 id = "trilium"
 name = "Trilium Notes"
-description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
-description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
+description.en = "Hierarchical note taking app"
+description.fr = "Application hiérarchique de prise de notes"
 
-version = "0.63.7~ynh1"
+version = "0.96.0~ynh1"
 
-maintainers = ["Jules Bertholet"]
+maintainers = []
 
 [upstream]
 license = "AGPL-3.0-only"
-admindoc = "https://github.com/zadam/trilium/wiki"
-code = "https://github.com/zadam/trilium"
+admindoc = "https://triliumnext.github.io/Docs/"
+code = "https://github.com/TriliumNext/Trilium"
 cpe = "cpe:2.3:a:trilium_project:trilium"
-fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.2"
-architectures = [ "amd64", "arm64", "armhf" ]
+yunohost = ">= 12.0.9"
+helpers_version = "2.1"
+architectures = [ "amd64", "arm64"]
 multi_instance = true
 
 ldap = false
@@ -55,9 +55,10 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.63.7.tar.gz"
-        sha256 = "e2ce313758e84c879603853a912ebb2e088f71a3acc6daeb8b1a8dcc4cf7fde1"
-        rename = "v0.60.4.tar.gz"
+        amd64.url = "https://github.com/TriliumNext/Trilium/archive/refs/tags/v0.96.0.tar.gz"
+        amd64.sha256 = "11840aad53905e199a4878e5b13568e5af79ccc4fac3c24406b7fdac40b83105"
+        arm64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-arm64.tar.xz"
+        arm64.sha256 = "b2f5f30a178dc794954d28eac44044760628684e532471511b4bfce8d9de8c8b"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
@@ -70,11 +71,11 @@ ram.runtime = "110M"
     main.url = "/"
 
     [resources.ports]
-    main.default = 8095
 
     [resources.apt]
-    packages = "libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
+    packages ="libnss3, libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
 
     extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
     extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
     extras.yarn.packages = "yarn"
+    
