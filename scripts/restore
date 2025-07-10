@@ -4,6 +4,13 @@ source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
+# REINSTALL DEPENDENCIES
+#=================================================
+ynh_script_progression "Reinstalling dependencies..."
+
+ynh_nodejs_install
+
+#=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
 ynh_script_progression "Restoring the app main directory..."
