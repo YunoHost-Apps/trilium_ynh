@@ -12,7 +12,7 @@ maintainers = []
 [upstream]
 license = "AGPL-3.0-only"
 admindoc = "https://triliumnext.github.io/Docs/"
-code = "https://github.com/TriliumNext/Notes"
+code = "https://github.com/TriliumNext/Trilium"
 cpe = "cpe:2.3:a:trilium_project:trilium"
 
 [integration]
@@ -55,10 +55,10 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.96.0/TriliumNextNotes-v0.96.0-linux-x64.zip"
-        amd64.sha256 = "9728576f43f239d933ca05082216be303995618e0285a5bcdd37d7a9dc54298f"
-        arm64.url = "https://github.com/TriliumNext/Notes/releases/download/v0.96.0/TriliumNextNotes-v0.96.0-linux-arm64.zip"
-        arm64.sha256 = "17fbcaccb75e1a697c48c5ac7744b46f17857f9fa5638b78a16a70d6982b701d"
+        amd64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-x64.tar.xz"
+        amd64.sha256 = "825ec2759be2e1daf2b2c99b4ea67f18015ab2bd4929d9fed9a2b396a701a844"
+        arm64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-arm64.tar.xz"
+        arm64.sha256 = "b2f5f30a178dc794954d28eac44044760628684e532471511b4bfce8d9de8c8b"
         autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
