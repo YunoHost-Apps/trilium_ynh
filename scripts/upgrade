@@ -24,38 +24,22 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Upgrading source files..." --weight=10
+ynh_script_progression --message="Upgrading source files..." --weight=10
 
-	# Download, check integrity, uncompress and patch the source from app.src
-	ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source --dest_dir="$install_dir" --keep="config.ini"
 
-	grep -v electron "$install_dir/package.json" > "$install_dir/server-package.json"
-	mv "$install_dir/server-package.json" "$install_dir/package.json"
-fi
 
 chmod 750 "$install_dir"
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
-#=================================================
-# UPGRADE NODEJS
-#=================================================
-ynh_script_progression --message="Upgrading nodejs..." --weight=5
+if ynh_compare_current_package_version --comparison lt --version 0.63.7~ynh1; then
+	ynh_script_progression --message="Removing old nodejs version..." --weight=5
 
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-
-#=================================================
-# INSTALL NODE PACKAGES
-#=================================================
-ynh_script_progression --message="Installing Node.js packages ..." --weight=45
-
-pushd "$install_dir"
-	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm install ./
-	ynh_exec_warn_less ynh_exec_as $app $ynh_node_load_PATH $ynh_npm rebuild ./
-popd
+	# Remove the old nodejs version
+	ynh_remove_nodejs
+fi
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
