@@ -56,7 +56,7 @@ ram.runtime = "110M"
 
         [resources.sources.main]
         url = "https://github.com/zadam/trilium/archive/refs/tags/v0.63.7.tar.gz"
-        sha256 = "e2ce313758e84c879603853a912ebb2e088f71a3acc6daeb8b1a8dcc4cf7fde1"
+        sha256 = "94440c63fe841b33ff126baa8405fbfdb6e5f429f38b45ba89d354c6065c96ac"
         rename = "v0.60.4.tar.gz"
         autoupdate.strategy = "latest_github_tag"
 
