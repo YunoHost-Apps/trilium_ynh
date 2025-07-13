@@ -21,7 +21,7 @@ Hierarchical note taking application with focus on building large personal knowl
 
 [![Automatic tests level](https://apps.yunohost.org/badge/cilevel/trilium)](https://ci-apps.yunohost.org/ci/apps/trilium/)
 
-🛠️ Upstream Trilium Notes repository: <https://github.com/zadam/trilium>
+🛠️ Upstream Trilium Notes repository: <https://github.com/TriliumNext/trilium>
 
 Pull request are welcome and should target the [`testing` branch](https://github.com/YunoHost-Apps/trilium_ynh/tree/testing).
 

@@ -27,8 +27,6 @@ ynh_remove_systemd_config
 
 ynh_remove_nginx_config
 
-ynh_remove_nodejs
-
 #=================================================
 # END OF SCRIPT
 #=================================================
