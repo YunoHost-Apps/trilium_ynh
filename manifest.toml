@@ -20,8 +20,10 @@ fund = "https://github.com/sponsors/zadam"
 yunohost = ">= 11.2"
 architectures = [ "amd64", "arm64" ]
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "200M"
 ram.build = "350M"
 ram.runtime = "110M"
