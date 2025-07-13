@@ -4,7 +4,8 @@
 # COMMON VARIABLES
 #=================================================
 
-nodejs_version="18"
+# for removing on update
+nodejs_version=18
 
 #=================================================
 # PERSONAL HELPERS
