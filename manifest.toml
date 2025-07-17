@@ -5,23 +5,25 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
 description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.63.7~ynh1"
+version = "0.96.0~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
 [upstream]
 license = "AGPL-3.0-only"
-admindoc = "https://github.com/zadam/trilium/wiki"
-code = "https://github.com/zadam/trilium"
+admindoc = "https://github.com/TriliumNext/trilium/wiki"
+code = "https://github.com/TriliumNext/trilium"
 cpe = "cpe:2.3:a:trilium_project:trilium"
 fund = "https://github.com/sponsors/zadam"
 
 [integration]
 yunohost = ">= 11.2"
-architectures = [ "amd64", "arm64", "armhf" ]
+architectures = [ "amd64", "arm64" ]
 multi_instance = true
+
 ldap = false
 sso = false
+
 disk = "200M"
 ram.build = "350M"
 ram.runtime = "110M"
@@ -53,10 +55,9 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        url = "https://github.com/zadam/trilium/archive/refs/tags/v0.63.7.tar.gz"
-        sha256 = "e2ce313758e84c879603853a912ebb2e088f71a3acc6daeb8b1a8dcc4cf7fde1"
-        rename = "v0.60.4.tar.gz"
-        autoupdate.strategy = "latest_github_tag"
+        url = "https://github.com/TriliumNext/Trilium/releases/download/v0.96.0/TriliumNotes-Server-v0.96.0-linux-x64.tar.xz"
+        sha256 = "825ec2759be2e1daf2b2c99b4ea67f18015ab2bd4929d9fed9a2b396a701a844"
+        autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
 
@@ -69,10 +70,3 @@ ram.runtime = "110M"
 
     [resources.ports]
     main.default = 8095
-
-    [resources.apt]
-    packages = "libpng16-16, libpng-dev, pkg-config, autoconf, libtool, build-essential, nasm, libx11-dev, libxkbfile-dev"
-
-    extras.yarn.repo = "deb https://dl.yarnpkg.com/debian/ stable main"
-    extras.yarn.key = "https://dl.yarnpkg.com/debian/pubkey.gpg"
-    extras.yarn.packages = "yarn"
