@@ -17,7 +17,7 @@ cpe = "cpe:2.3:a:trilium_project:trilium"
 fund = "https://github.com/sponsors/zadam"
 
 [integration]
-yunohost = ">= 11.2"
+yunohost = ">= 12.1.17"
 architectures = [ "amd64", "arm64" ]
 multi_instance = true
 
@@ -74,3 +74,6 @@ ram.runtime = "110M"
 
     [resources.ports]
     main.default = 8095
+
+    [resources.nodejs]
+    version = "18"
