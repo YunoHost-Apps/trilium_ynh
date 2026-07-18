@@ -5,7 +5,7 @@ name = "Trilium Notes"
 description.en = "Hierarchical note taking application with focus on building large personal knowledge base"
 description.fr = "Application de prise de note hiérarchique centrée sur la construction d'une large base de connaissances personnelle"
 
-version = "0.103.0~ynh1"
+version = "0.104.0~ynh1"
 
 maintainers = ["Jules Bertholet"]
 
@@ -56,10 +56,10 @@ ram.runtime = "110M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.103.0/TriliumNotes-Server-v0.103.0-linux-x64.tar.xz"
-        amd64.sha256 = "f8f9a511ebda7227fdc4ff32ecaacc302c0c4348c6993f7256132b4354981b9f"
-        arm64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.103.0/TriliumNotes-Server-v0.103.0-linux-arm64.tar.xz"
-        arm64.sha256 = "4639c70af54847f13167d942f2e906af633c5f51e78f965e54c9901d4bd94ca6"
+        amd64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.104.0/TriliumNotes-Server-v0.104.0-linux-x64.tar.xz"
+        amd64.sha256 = "96b64bd1cf628ef8d851094de813750611d1d8a69c146ea1e8acc896420a2c69"
+        arm64.url = "https://github.com/TriliumNext/Trilium/releases/download/v0.104.0/TriliumNotes-Server-v0.104.0-linux-arm64.tar.xz"
+        arm64.sha256 = "120a9803b2014adf6d675d8c824b482a127dff0c3fa6b4c213967b7a731493b4"
         autoupdate.strategy = "latest_github_release"
         autoupdate.asset.amd64 = "^TriliumNotes-Server-v\\d+(\\.\\d+){2}-linux-x64\\.tar\\.xz"
         autoupdate.asset.arm64 = "^TriliumNotes-Server-v\\d+(\\.\\d+){2}-linux-arm64\\.tar\\.xz"
